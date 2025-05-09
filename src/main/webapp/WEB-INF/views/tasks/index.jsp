@@ -3,19 +3,25 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:import url="../layout/app.jsp">
     <c:param name="content">
-        <h2>メッセージ一覧</h2>
-        <ul>
-            <c:forEach var="t" items="${tasks}">
-                <li><a
-                    href="${pageContext.request.contextPath}/show?id=${t.id}"> <c:out
-                            value="${t.id}" />
-                </a> :<c:out value="${t.content}" /></li>
-            </c:forEach>
-        </ul>
+        <c:param name="content">
+            <c:if test="${flush != null}">
+                <div id="flush_success">
+                    <c:out value="${flush}"></c:out>
+                </div>
+            </c:if>
+            <h2>メッセージ一覧</h2>
+            <ul>
+                <c:forEach var="t" items="${tasks}">
+                    <li><a
+                        href="${pageContext.request.contextPath}/show?id=${t.id}"> <c:out
+                                value="${t.id}" />
+                    </a> :<c:out value="${t.content}" /></li>
+                </c:forEach>
+            </ul>
 
-        <p>
-            <a href="${pageContext.request.contextPath}/new">新規メッセージの投稿</a>
-        </p>
+            <p>
+                <a href="${pageContext.request.contextPath}/new">新規メッセージの投稿</a>
+            </p>
 
-    </c:param>
+        </c:param>
 </c:import>

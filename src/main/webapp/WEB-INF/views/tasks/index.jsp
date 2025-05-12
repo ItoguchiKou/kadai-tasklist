@@ -8,7 +8,7 @@
                     <c:out value="${flush}"></c:out>
                 </div>
             </c:if>
-            <h2>メッセージ一覧</h2>
+            <h2>タスク一覧</h2>
             <ul>
                 <c:forEach var="t" items="${tasks}">
                     <li><a
@@ -35,7 +35,7 @@
             </div>
 
             <p>
-                <a href="${pageContext.request.contextPath}/new">新規メッセージの投稿</a>
+                <a href="${pageContext.request.contextPath}/new">新規タスクの投稿</a>
             </p>
 
         </c:param>
